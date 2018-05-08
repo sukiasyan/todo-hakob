@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Todoapp from './components/Todoapp';
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-       <p>Test</p>
+       <Todoapp/>
       </div>
     );
   }
 }
-
 export default App;

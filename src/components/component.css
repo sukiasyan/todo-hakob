@@ -1,0 +1,99 @@
+.navbar-brand {
+    color: #333;
+}
+
+a {
+    color: #aaa;
+    font-weight: 200;
+}
+
+.jumbotron {
+    /*background-image: url('../images/man.jpeg');*/
+    background-color: #aaaaaa;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    color: #ffffff;
+
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #333;
+    display: block;
+}
+
+.todo-wrapper {
+    text-align: center;
+    margin: 20px auto 120px auto;
+    width: 500px;
+    min-height: 600px;
+    border: 5px solid rgba(73, 204, 249, 1.0);
+    padding: 20px;
+}
+
+.btn {
+    outline: none;
+    box-shadow: none;
+    border-width: 2px;
+    border-radius: 3px;
+    border-style: solid;
+    padding: 8px;
+}
+.btn-primary {
+    color: rgba(73, 204, 249, 1.0);
+    border-color: rgba(73,204,249, 1.0);
+    background-color: transparent;
+}
+input {
+    width: 80%;
+    border: none;
+    border-top: 2px solid rgba(73,204,249, 1.0);
+    border-bottom: 2px solid rgba(73,204,249, 1.0);
+    margin-right: 10px;
+    padding: 5px;
+    line-height: 17px;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+    border-top: 2px solid rgba(73,204,249, 1.0);
+    border-bottom: 2px solid rgba(73,204,249, 1.0);
+}
+
+.todoWrapper {
+    border-bottom: 1px solid #efefef;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.removeTodo {
+    margin-right: 20px;
+    margin-bottom: 10px;
+    outline: none;
+    box-shadow: none;
+    border-width: 2px;
+    border-radius: 3px;
+    border-style: solid;
+    padding: 8px;
+    color: rgba(203,20,32,0.4);
+    border-color: rgba(203,20,32,0.4);
+    background-color: transparent;
+}
+.done {
+    color: red;
+    text-decoration: line-through;
+}
+
+.undone {
+    color: green;
+}
+
+.icon {
+    margin: 6px 10px 6px 10px;
+}
