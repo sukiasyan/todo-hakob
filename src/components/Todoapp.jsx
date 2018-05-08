@@ -11,9 +11,9 @@ class Todoapp extends Component {
         // Initializing some dummy data
         this.state = {
             todos: [
-                {id: 0, text: "Make dinner tonight", done: false},
-                {id: 1, text: "fold the laundry" , done: false},
-                {id: 2, text: "Make React app",  done: true}
+                {id: 0, text: "Make dinner tonight", done: "undone"},
+                {id: 1, text: "fold the laundry" , done: "undone"},
+                {id: 2, text: "Make React app",  done: "undone"}
             ],
             nextId: 3
         };
@@ -25,10 +25,11 @@ class Todoapp extends Component {
 
     addTodo(todoText) {
         let todos = this.state.todos.slice();
-        todos.push({id: this.state.nextId, text: todoText, done: false});
+        todos.push({id: this.state.nextId, text: todoText, done: "undone"});
+        let nextId = this.state.nextId;
         this.setState({
             todos: todos,
-            nextId: ++this.state.nextId
+            nextId: ++nextId
         })
     }
 
@@ -40,8 +41,13 @@ class Todoapp extends Component {
     markTodoDone(itemIndex) {
         let todosDone = this.state.todos;
         this.setState({
-            done: true
+            todosDone: todosDone
         });
+       if(todosDone[itemIndex].done === "undone"){
+           todosDone[itemIndex].done = "done"
+       }else {
+           todosDone[itemIndex].done = "undone"
+       }
         console.log(itemIndex, todosDone[itemIndex].done);
     }
     render() {
