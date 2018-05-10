@@ -15,7 +15,8 @@ class Todoapp extends Component {
                 {id: 1, text: "fold the laundry" , done: "undone"},
                 {id: 2, text: "Make React app",  done: "undone"}
             ],
-            nextId: 3
+            nextId: 3,
+            showEdit: false
         };
 
         this.addTodo = this.addTodo.bind(this);
@@ -39,7 +40,7 @@ class Todoapp extends Component {
         })
     }
     markTodoDone(itemIndex) {
-        let todosDone = this.state.todos;
+        let todosDone = [...this.state.todos];
         this.setState({
             todosDone: todosDone
         });
@@ -50,6 +51,7 @@ class Todoapp extends Component {
        }
         console.log(itemIndex, todosDone[itemIndex].done);
     }
+
     render() {
         return (
             <div>
@@ -63,12 +65,16 @@ class Todoapp extends Component {
                             {
                                 this.state.todos.map((todo) => {
                                     return  <TodoItem todo={todo} key={todo.id} id={todo.id}
-                                                      removeTodo={this.removeTodo} markTodoDone={this.markTodoDone}/>
+                                                      removeTodo={this.removeTodo}
+                                                      markTodoDone={this.markTodoDone} />
 
                                 })
                             }
                         </ul>
                     </div>
+
+                </div>
+                <div>
 
                 </div>
                 <Footer/>

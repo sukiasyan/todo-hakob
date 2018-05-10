@@ -65,6 +65,20 @@ input:focus {
     border-top: 2px solid rgba(73,204,249, 1.0);
     border-bottom: 2px solid rgba(73,204,249, 1.0);
 }
+.edit-input {
+    width: 60%;
+    border: none;
+    margin-right: 10px;
+    padding: 5px;
+    line-height: 17px;
+}
+
+.edit-input:focus {
+    outline: none;
+    border: none;
+    border-top: 2px solid rgba(255,0,0, 1.0);
+    border-bottom: 2px solid rgba(255,0,0, 1.0);
+}
 
 .todoWrapper {
     border-bottom: 1px solid #efefef;
