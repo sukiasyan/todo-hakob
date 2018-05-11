@@ -11,12 +11,13 @@ class Todoapp extends Component {
         // Initializing some dummy data
         this.state = {
             todos: [
-                {id: 0, text: "Make dinner tonight", done: "undone"},
-                {id: 1, text: "fold the laundry" , done: "undone"},
-                {id: 2, text: "Make React app",  done: "undone"}
+                {id: 0, text: "fold the laundry", done: "undone"},
+                {id: 1, text: "Make React app", done: "undone"},
+                {id: 2, text: "Make React app", done: "undone"}
             ],
             nextId: 3,
-            showEdit: false
+            showEdit: false,
+            zeroElement: true
         };
 
         this.addTodo = this.addTodo.bind(this);
@@ -35,20 +36,29 @@ class Todoapp extends Component {
     }
 
     removeTodo(id) {
-        this.setState({
-            todos: this.state.todos.filter((todo, index) => todo.id !== id)
-        })
+        if (id === 0) {
+            this.setState({zeroElement: false})
+        }
+        const todos = [...this.state.todos];
+        todos.splice(id, 1);
+        this.setState({todos: todos});
     }
+
     markTodoDone(itemIndex) {
         let todosDone = [...this.state.todos];
         this.setState({
             todosDone: todosDone
         });
-       if(todosDone[itemIndex].done === "undone"){
-           todosDone[itemIndex].done = "done"
-       }else {
-           todosDone[itemIndex].done = "undone"
-       }
+        if (!this.state.zeroElement) {
+            itemIndex = itemIndex - 1;
+            console.log(itemIndex);
+        }
+        if (todosDone[itemIndex].done === "undone") {
+            todosDone[itemIndex].done = "done"
+        } else {
+            todosDone[itemIndex].done = "undone"
+        }
+
         console.log(itemIndex, todosDone[itemIndex].done);
     }
 
@@ -64,9 +74,9 @@ class Todoapp extends Component {
                         <ul>
                             {
                                 this.state.todos.map((todo) => {
-                                    return  <TodoItem todo={todo} key={todo.id} id={todo.id}
-                                                      removeTodo={this.removeTodo}
-                                                      markTodoDone={this.markTodoDone} />
+                                    return <TodoItem todo={todo} key={todo.id} id={todo.id}
+                                                     removeTodo={this.removeTodo}
+                                                     markTodoDone={this.markTodoDone}/>
 
                                 })
                             }

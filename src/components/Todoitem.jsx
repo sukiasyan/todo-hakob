@@ -7,10 +7,10 @@ class TodoItem extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.state = {
             value: ''
-        }
+        };
     }
     componentDidMount(){
-        this.setState({value: this.props.todo.text})
+        this.setState({value: this.props.todo.text});
     }
     removeTodo(id){
         this.props.removeTodo(id);
